@@ -1,4 +1,5 @@
 ﻿using MemeCreator.Application.Interfaces;
+using MemeCreator.Application.Services;
 using MemeCreator.Infrastructure.Persistence;
 using MemeCreator.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,7 @@ public static class DependencyInjection
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IConfigRepository, ConfigRepository>();
+        services.AddScoped<IMemeService, MemeService>();
 
         return services;
     }
