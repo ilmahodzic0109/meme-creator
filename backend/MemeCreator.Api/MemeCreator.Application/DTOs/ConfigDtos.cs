@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MemeCreator.Application.DTOs
+﻿namespace MemeCreator.Application.DTOs
 {
     public class ConfigDtos
     {
-        //defaultne vrijednosti
         public string TopText { get; set; } = string.Empty;
         public string BottomText { get; set; } = string.Empty;
 
@@ -26,7 +19,7 @@ namespace MemeCreator.Application.DTOs
         public string? WatermarkImageBase64 { get; set; }
         public string? WatermarkPosition { get; set; }
 
-        public float ScaleDown { get; set; } = 0.1f; // <= 0.25
+        public float ScaleDown { get; set; } = 0.1f; 
     }
 
     public class UpdateConfigRequest : ConfigDtos { }

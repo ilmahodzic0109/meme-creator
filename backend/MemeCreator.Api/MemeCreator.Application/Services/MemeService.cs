@@ -1,8 +1,6 @@
 ﻿using MemeCreator.Application.Interfaces;
 using MemeCreator.Domain.Entities;
 using SkiaSharp;
-using System.Drawing;
-using System.IO;
 
 namespace MemeCreator.Application.Services;
 
@@ -14,7 +12,7 @@ public class MemeService : IMemeService
     {
         _configRepo = configRepo;
     }
-
+    
     public async Task<byte[]> PreviewAsync(byte[] imageBytes, int configId, int? canvasWidth, int? canvasHeight)
     {
         var config = await LoadConfig(configId);

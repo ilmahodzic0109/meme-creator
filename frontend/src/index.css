@@ -1,0 +1,15 @@
+.preview-box {
+  width: 100%;
+  height: 520px;         
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   
+  display: block;
+}

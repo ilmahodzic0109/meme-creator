@@ -45,12 +45,21 @@ public static class ConfigRequestMapping
         entity.WatermarkImage = DecodeBase64OrNull(request.WatermarkImageBase64);
     }
 
-    private static byte[]? DecodeBase64OrNull(string? base64)
+    private static byte[]? DecodeBase64OrNull(string? input)
     {
-        if (string.IsNullOrWhiteSpace(base64))
-            return null;
+        if (string.IsNullOrWhiteSpace(input)) return null;
 
-        try { return Convert.FromBase64String(base64); }
-        catch { throw new ArgumentException("Invalid base64 watermarkImage."); }
+        var comma = input.IndexOf(',');
+        var base64 = comma >= 0 ? input[(comma + 1)..] : input;
+
+        try
+        {
+            return Convert.FromBase64String(base64);
+        }
+        catch
+        {
+            return null;
+        }
     }
+
 }
