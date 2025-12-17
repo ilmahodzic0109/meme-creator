@@ -1,6 +1,6 @@
 import type { MemeConfig } from "../models/MemeConfig";
 
-const BASE = import.meta.env.VITE_API_BASE_URL ?? "https://localhost:7012";
+const BASE = import.meta.env.VITE_API_BASE_URL;
 
 export async function createConfig(config: MemeConfig): Promise<number> {
   const res = await fetch(`${BASE}/api/config`, {
