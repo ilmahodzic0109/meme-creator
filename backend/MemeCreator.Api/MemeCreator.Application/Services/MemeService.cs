@@ -93,6 +93,18 @@ public class MemeService : IMemeService
         return resized;
     }
 
+    private static SKTypeface ResolveTypeface(string? family)
+    {
+        var f = (family ?? string.Empty).Trim();
+
+        return f switch
+        {
+            "DejaVu Sans" => SKTypeface.FromFamilyName("DejaVu Sans") ?? SKTypeface.Default,
+            "DejaVu Serif" => SKTypeface.FromFamilyName("DejaVu Serif") ?? SKTypeface.Default,
+            _ => SKTypeface.Default
+        };
+    }
+
     private static void DrawCaption(
         SKCanvas canvas,
         int imgW,
@@ -106,7 +118,7 @@ public class MemeService : IMemeService
     {
         if (string.IsNullOrWhiteSpace(text) || fontSize <= 0) return;
 
-        var typeface = SKTypeface.FromFamilyName(config.FontFamily) ?? SKTypeface.Default;
+        var typeface = ResolveTypeface(config.FontFamily);
 
         var fillPaint = new SKPaint
         {

@@ -12,7 +12,7 @@ type Props = {
   ) => void;
 };
 
-const fonts = ["Impact", "Arial Black", "Arial", "Verdana", "Times New Roman"];
+const fonts = ["DejaVu Sans", "DejaVu Serif"];
 const watermarkPositions: WatermarkPosition[] = [
   "top-left",
   "top-right",

@@ -5,7 +5,7 @@
         public string TopText { get; set; } = string.Empty;
         public string BottomText { get; set; } = string.Empty;
 
-        public string FontFamily { get; set; } = "Impact";
+        public string FontFamily { get; set; } = "DejaVu Sans";
         public int FontSize { get; set; } = 40;
 
         public string TextColor { get; set; } = "#FFFFFF";

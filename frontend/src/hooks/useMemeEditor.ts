@@ -6,7 +6,7 @@ import { previewMeme } from "../api/memeApi";
 const defaultConfig: MemeConfig = {
   topText: "",
   bottomText: "",
-  fontFamily: "Impact",
+  fontFamily: "DejaVu Sans",
   fontSize: 40,
   textColor: "#ffffff",
   strokeColor: "#000000",
