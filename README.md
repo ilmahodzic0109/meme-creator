@@ -3,6 +3,9 @@
 - Upload PNG/JPG
 - Edit meme config - top/bottom text, font, size, colors, stroke, align, padding, ALL CAPS
 - Optional watermark + position
+- Live preview (scaled-down rendering)
+- Client-side download of generated image
+
 ---
 ## 2) Tech Stack
 - **Backend:** .NET (ASP.NET Core), SkiaSharp for image rendering
@@ -84,9 +87,14 @@ docker compose up -d --build
 - Frontend docker: http://localhost:3000
 - Backend API (Swagger) docker: http://localhost:5000/swagger
 ### Logs / Stop
-- docker compose logs -f
-- docker compose down
-- Optional remove volumes (deletes DB data): docker compose down -v
+```bash
+docker compose logs -f
+docker compose down
+```
+- Optional remove volumes (deletes DB data): 
+```bash 
+docker compose down -v 
+```
 ### Testing
 - Open the frontend and use the meme editor UI
 - Verify API endpoints via Swagger UI
@@ -110,10 +118,11 @@ docker compose down
 - hooks/ – state management and orchestration logic (useMemeEditor)
 - api/ – HTTP API communication (configApi, memeApi)
 - models/ – TypeScript models and types (MemeConfig)
+- utils/ - frontend utility helpers (download)
 ---
 ## 7) Deployment (Optional)
 - This solution was deployed on an Azure Linux VM using Docker Compose.
-- Steps: 
+Steps: 
 - Create an Ubuntu VM in Azure
 - Install Docker + Docker Compose plugin on the VM
 - Open inbound ports on the VM Network Security Group (NSG):
